@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Movie App</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+        
+        <link href="http://graygrids.com/demos/themes/elevator/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <link href="http://graygrids.com/demos/themes/elevator/css/font-awesome.min.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+        <link href="http://graygrids.com/demos/themes/elevator/css/animate.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="http://graygrids.com/demos/themes/elevator/css/style.css" rel="stylesheet">
+         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+
+       
+        
+       
+        
+       
+       
+       
+	</head>
+
+	<body>
+    
+<style>
+            .navbar{
+                background-color: #545323;
+                margin-right: 0px;
+                margin-left: 0px;
+                padding-top: -10px;
+                margin-bottom: 9px;
+                padding-bottom: -10px;
+                padding-right : 15px;
+            }
+            a {
+                color: #BCBCBC;
+                text-decoration: none;
+            }
+    </style>
+    <div class="navbar">
+           <ul class="nav navbar-nav">
+                <li class="active"><a href="http://127.0.0.1:8000/movieApp/">Home</a></li>
+            </ul>
+        <div id="tfheader">
+		
+        
+        <form class="navbar-form navbar-left" method="get" action="/search/">
+         
+           <input type="text" name="q" id="id_q"/>
+           <input type="submit" value="Search"/> 
+ 
+	</br>
+	<input type="radio" name="ip" value="n"><font color="white">Name</font>
+    <input type="radio" name="ip" value="p"><font color="white">Popularity</font>
+    <input type="radio" name="ip" value="d"><font color="white">Director</font>
+    <input type="radio" name="ip" value="g"><font color="white">Genre</font>
+    
+       
+  
+ 
+</form>
+
+
+
+
+
+     
+        
+	<div class="tfclear"></div>
+	</div>
+        <ul class="nav navbar-nav navbar-right">
+            
+            <li class="active"><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">Admin</a></li>
+                
+          
+            <li class="active"><a href="https://drive.google.com/open?id=0BwY805_2ad3RdVVXYlhsWVMwQjg">Contact Us</a></li>
+            <li class="active"><a class="btn btn-linkedin btn-lg" href="https://in.linkedin.com/pub/nutan-kumari/69/927/702"><i class="icon-linkedin icon-large"></i> Linkedin</a></li>
+	   <li class="active"><a class="btn btn-facebook btn-lg" href="https://www.facebook.com/nutan.kumari.963"><i class="icon-facebook icon-large"></i> Facebook</a></li>
+        </ul>
+    </div>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <style>
+                            .jumbotron {
+                            margin-top: 12px;  
+                            margin-bottom: 12px;
+                            color: #efefef;
+                            background-color: rgba(157,52,99,0.7);
+                            padding-top: 0px;
+                            padding-bottom: 1px;
+                            }
+                        </style>
+                        <div class="jumbotron" align = "center">
+                        
+                        
+            
+            <img src="http://tigertools.pbworks.com/f/film.png" class="img-responsive" alt="">
+              <p align = "center"><h1>Movie Cart</h1></p> 
+            </div>
+            
+             
+              
+              
+                         
+          </div>              
+        
+      </div>
+      
+    </div> 
+  </div><!-- /cont -->
+  
+ 
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+        
+          
+          <!--/stories-->
+		  <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+            
+            <img src="http://i0.wp.com/www.jonathanmoya.net/wp-content/uploads/2015/07/ubnwdnteprvs0mhsrmc3.jpg?resize=159%2C212" class="img-responsive" alt="">
+              
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h2>Browse movies</h2><hr>
+              {% if movie_list %}
+<ul>
+<style>
+div.cities {
+    background-color:Darkcyan;
+    color:white;
+    margin:20px;
+    padding:20px;
+} 
+</style>
+
+{% for movie in movie_list %}
+    <div class="cities" align = "center">
+               <h3> <div class="name">{{ movie.name }}</div></h3>
+                <ul>
+                    
+                    <div class="imdb_score">IMDB SCORE : {{ movie.imdb_score }}</div>
+                    <div class="popularity ">POPULARITY : {{ movie.popularity }}</div>
+                    <div class="director">DIRECTOR : {{ movie.director }}</div>
+                    <div class="genre">GENRE : {{ movie.genre }}</div>
+                    
+                </ul>
+                
+            </div>
+{% endfor %}
+</ul>
+{% endif %}
+              
+          <hr>
+          <!--/stories-->
+          
+          
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

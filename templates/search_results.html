@@ -1,0 +1,30 @@
+{% if movie_list %}
+<ul>
+<style>
+div.cities {
+    background-color:Darkcyan;
+    color:white;
+    margin:20px;
+    padding:20px;
+} 
+</style>
+
+{% for movie in movie_list %}
+    <div class="cities" align = "center">
+               <h3> <div class="name">{{ movie.name }}</div></h3>
+                <ul>
+                    
+                    <div class="imdb_score">IMDB SCORE : {{ movie.imdb_score }}</div>
+                    <div class="popularity ">POPULARITY : {{ movie.popularity }}</div>
+                    <div class="director">DIRECTOR : {{ movie.director }}</div>
+                    <div class="genre">GENRE : {{ movie.genre }}</div>
+                    
+                </ul>
+                
+            </div>
+{% endfor %}
+</ul>
+{% endif %}
+<div align="center">
+<img src="http://img2.wikia.nocookie.net/__cb20130720012650/despicableme/images/1/18/Minion_dave.jpg" alt="">
+</div>
